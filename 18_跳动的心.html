@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            /* 容器宽度高度都充满全屏 */
+        }
+        body{
+            background-color: pink;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             justify-content: center;
+
+        }
+        .a{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            box-shadow: 0 0 30px red;
+            transform: rotate(45deg)
+            /* 顺时针旋转45° */
+            
+            
+        }
+        .a::before{
+            content: "";
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: -99px;
+            border-radius: 100px 100px 0 0;
+            box-shadow: 0 0 30px red;
+        }
+        .a::after{
+            content: "";
+            width: 100px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: -99px;
+            top: 0;
+            border-radius: 100px 0 0 100px;
+            box-shadow: 0 0 10px red;
+        } 
+        @keyframes b{
+            0%{
+                background-color: red;
+                transform: rotate(45deg) scale(0.6);
+            }
+            /* 25%{
+                background-color: red;
+                transform: rotate(45deg) scale(0.8);
+            }
+            50%{
+                background-color: red;
+                transform: rotate(45deg) scale(1);
+            }
+            75%{
+                background-color: red;
+                transform: rotate(45deg) scale(1.2);
+            } */
+            100%{
+                background-color: red;
+                transform: rotate(45deg) scale(1.4);
+            }
+        }
+        .a{
+            animation: b 1s linear 0s infinite  ;
+        }
+    </style>
+</head>
+<body>
+    <div class="a"></div>
+</body>
+</html>
